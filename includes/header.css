@@ -1,0 +1,36 @@
+:root {
+    --detail-color: #ffb300;
+    --hover-color: #ffd269;
+    --bg-color: #383838;
+    --lightbg-color: #5e5e5e;
+}
+
+
+header {
+    height: 100%;
+    width: 90%;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 5%;
+
+    font-family: 'Share Tech', sans-serif;
+    color:var(--detail-color);
+    background-color: var(--bg-color);
+}
+header a{
+    color:var(--detail-color);
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
