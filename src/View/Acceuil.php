@@ -8,7 +8,7 @@ use App\Controller\FilmsController;
 $FilmsController = new FilmsController;
 $GetPopular = $FilmsController->GetPopular();
 
-//var_dump($GetPopular['results'][1]) ;
+//var_dump($GetPopular['results'][0]) ;
 
 
 ?>
@@ -55,7 +55,8 @@ $GetPopular = $FilmsController->GetPopular();
                     ?>
                     <div class='FilmInfo'>
                         <h2><?= $film['title'] ?></h2>
-                        sortit le : <?= $film['release_date'] ?>
+                        <h3>Sortit le : <?= $film['release_date'] ?></h3>
+                        Note moyenne : <?= $film['vote_average'] ?> nombres de notes : <?= $film['vote_count'] ?>     
                        
                     </div>
                     </swiper-slide>

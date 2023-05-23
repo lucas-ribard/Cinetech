@@ -11,13 +11,20 @@ swiper-container {
     padding: 0 2%;
     box-shadow: 10px 5px 10px gray;
 }
-
+swiper-slide{
+    color : var(--detail-color);
+    background-color: var(--bg-color);
+}
 swiper-slide img {
     width: 100%;
     max-height: 90%;
-    padding-bottom: 2%
+    padding-bottom: 2%;
 }
 
 #SortiesPopulairesSlider{
     padding: 0 10%;
+}
+
+.FilmInfo{
+    padding: 0 5% 1%;
 }
