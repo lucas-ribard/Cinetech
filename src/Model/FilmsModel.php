@@ -10,7 +10,7 @@ class FilmsModel
 
         $response = file_get_contents($requete);
 
-        $response = json_decode($response, true);
+        //$response = json_decode($response, true);
         return $response;
     }
 
@@ -29,7 +29,7 @@ class FilmsModel
     {
         $requete = 'https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $_ENV['TMDB_API_KEY'];
         $response = file_get_contents($requete);
-        $response = json_decode($response, true);
+       // $response = json_decode($response, true);
         return $response;
     }
 
@@ -37,9 +37,11 @@ class FilmsModel
     {
         $requete = 'https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $_ENV['TMDB_API_KEY'] . '/recommendations&include_adult=false';
         $response = file_get_contents($requete);
-        $response = json_decode($response, true);
+        //$response = json_decode($response, true);
         return $response;
     }
+
+
 }
 
 
