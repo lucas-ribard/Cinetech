@@ -1,0 +1,58 @@
+body {
+    background-color: var(--lightbg-color);
+}
+/*
+section{
+    background: rgb(68,68,68);
+    background: radial-gradient(circle, rgba(68,68,68,0.9752275910364145) 0%, rgba(162,162,162,0.3477766106442577) 100%);
+}
+*/
+swiper-container {
+    padding: 0 2%;
+}
+
+swiper-slide{
+    color : var(--detail-color);
+    background-color: var(--bg-color);
+    user-select: none;
+}
+swiper-slide img {
+    width: 100%;
+    max-height: 90%;
+    padding-bottom: 2%;
+}
+
+#SortiesPopulairesSlider{
+    padding: 0 10%;
+}
+
+.FilmInfo{
+    padding: 0 5% 1%;
+}
+
+.Sections{
+    margin-top: 5%;
+    padding:2% 2% ;
+
+    background-color: var(--bg-color);
+    box-shadow: 2px 5px 20px 14px rgba(0,0,0,0.23);
+   
+}
+#UpcomingContainer{
+    text-align: center;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+.poster{
+    width: 100%;
+}
+.swiperposter:hover{
+    transition-property: all;
+    transition-duration: 0.3s;
+    scale: 1.25;
+}
+
+h2{
+    color: var(--detail-color);
+    margin-left: 5%;
+}

@@ -1,0 +1,16 @@
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 0%;
+    line-height: 200%;
+    margin-top: 5%;
+
+    background-color: black;
+    color: white;
+}
+footer a:link{
+    color: white;
+}
+footer a:visited{
+    color: white;
+}
