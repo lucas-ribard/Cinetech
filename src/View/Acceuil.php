@@ -75,11 +75,14 @@ $LastMovies = $FilmsController->GetLastTwentyFilms();
     </section>
 
     <section id="Upcoming">
+    <h2><b>Nouveautés</b></h2>
         <div id="UpcomingContainer">
+          
         <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
             <?php
             foreach ($LastMovies['results'] as $film) {
-                echo '<swiper-slide><a href=""><img class="poster" src=" https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;</swiper-slide>';
+                echo '<swiper-slide><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;
+                Sortie le :<br><b>'.$film['release_date'].'</b></div></swiper-slide>';
             }
             ?>
         </div>
