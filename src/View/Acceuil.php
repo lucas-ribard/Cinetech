@@ -29,6 +29,7 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
     <!-- CSS -->
     <link href="includes/header.css" rel="stylesheet" type="text/css" />
     <link href="style/Acceuil.css" rel="stylesheet" type="text/css" />
+    <link href="includes/footer.css" rel="stylesheet" type="text/css" />
     <!-- FontAwesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -106,7 +107,10 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
             }
             ?>
         </div>
-            <br><br>
+        </section>
+
+        <section class="Sections">
+            
         <h2><b>Séries Populaires Anglaises/Américaines</b></h2>
         <div id="UpcomingContainer">
           
@@ -122,7 +126,8 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
 
 
 
-
+ <!-- Header -->
+ <?php require_once("includes/footer.php"); ?>
 </body>
 
 </html>
