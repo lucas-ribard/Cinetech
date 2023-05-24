@@ -30,7 +30,7 @@ swiper-slide img {
     padding: 0 5% 1%;
 }
 
-#Upcoming{
+.Sections{
     margin-top: 5%;
     padding:2% 2% ;
 
@@ -39,9 +39,16 @@ swiper-slide img {
 }
 #UpcomingContainer{
     text-align: center;
+    transition-property: all;
+    transition-duration: 0.3s;
 }
 .poster{
     width: 100%;
+}
+.swiperposter:hover{
+    transition-property: all;
+    transition-duration: 0.3s;
+    scale: 1.25;
 }
 
 h2{

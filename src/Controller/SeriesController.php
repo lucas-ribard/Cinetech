@@ -5,17 +5,30 @@ use App\Model\SeriesModel;
 
 class SeriesController
 {
-    public function GetLastTwenty()
+    public function GetLastTwentyFR()
     {
         $SeriesModel = new SeriesModel;
-        $response = $SeriesModel->GetLastTwenty();
+        $response = $SeriesModel->GetLastTwentyFR();
         return $response;
     }
 
-    public function GetPopular()
+    public function GetLastTwentyENG()
     {
         $SeriesModel = new SeriesModel;
-        $response = $SeriesModel->GetPopular();
+        $response = $SeriesModel->GetLastTwentyENG();
+        return $response;
+    }
+
+    public function GetPopularFR()
+    {
+        $SeriesModel = new SeriesModel;
+        $response = $SeriesModel->GetPopularFR();
+        return $response;
+    }
+    public function GetPopularENG()
+    {
+        $SeriesModel = new SeriesModel;
+        $response = $SeriesModel->GetPopularENG();
         return $response;
     }
 

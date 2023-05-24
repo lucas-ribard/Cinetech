@@ -11,6 +11,12 @@ $LastMovies = $FilmsController->GetLastTwentyFilms();
 //var_dump($LastMovies['results'][0]) ;
 
 
+$SeriesController = new SeriesController;
+$PopularSeriesFR = $SeriesController->GetPopularFR();
+$PopularSeriesENG = $SeriesController->GetPopularENG();
+$LastSeriesFR = $SeriesController->GetLastTwentyFR();
+$LastSeriesENG = $SeriesController->GetLastTwentyENG();
+//var_dump($PopularSeries['results'][0]) ;
 ?>
 
 <!DOCTYPE html>
@@ -74,19 +80,47 @@ $LastMovies = $FilmsController->GetLastTwentyFilms();
         </div>
     </section>
 
-    <section id="Upcoming">
+    <section class="Sections">
     <h2><b>Nouveautés</b></h2>
         <div id="UpcomingContainer">
           
         <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
             <?php
             foreach ($LastMovies['results'] as $film) {
-                echo '<swiper-slide><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;
+                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;
                 Sortie le :<br><b>'.$film['release_date'].'</b></div></swiper-slide>';
             }
             ?>
         </div>
     </section>
+
+    <section class="Sections">
+    <h2><b>Séries Populaires Françaises</b></h2>
+        <div id="UpcomingContainer">
+          
+        <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
+            <?php
+            foreach ($PopularSeriesFR['results'] as $Series) {
+                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $Series['poster_path'] . '"></a>&nbsp;
+                Débuté le :<br><b>'.$Series['first_air_date'].'</b></div></swiper-slide>';
+            }
+            ?>
+        </div>
+            <br><br>
+        <h2><b>Séries Populaires Anglaises/Américaines</b></h2>
+        <div id="UpcomingContainer">
+          
+        <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
+            <?php
+            foreach ($PopularSeriesENG['results'] as $Series) {
+                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $Series['poster_path'] . '"></a>&nbsp;
+                Débuté le :<br><b>'.$Series['first_air_date'].'</b></div></swiper-slide>';
+            }
+            ?>
+        </div>
+    </section>
+
+
 
 
 </body>
