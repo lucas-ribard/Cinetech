@@ -9,11 +9,13 @@ section{
 */
 swiper-container {
     padding: 0 2%;
-    box-shadow: 10px 5px 10px gray;
+   
+   
 }
 swiper-slide{
     color : var(--detail-color);
     background-color: var(--bg-color);
+    user-select: none;
 }
 swiper-slide img {
     width: 100%;
@@ -27,4 +29,16 @@ swiper-slide img {
 
 .FilmInfo{
     padding: 0 5% 1%;
+}
+
+#Upcoming{
+    margin-top: 5%;
+    padding:2% 2% ;
+
+    background-color: var(--bg-color);
+}
+
+.poster{
+    width: 100%;
+    margin: 5%;
 }

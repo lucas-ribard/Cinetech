@@ -6,9 +6,9 @@ use App\Controller\FilmsController;
 
 
 $FilmsController = new FilmsController;
-$GetPopular = $FilmsController->GetPopular();
-
-//var_dump($GetPopular['results'][0]) ;
+$PopularMovies = $FilmsController->GetPopular();
+$LastMovies = $FilmsController->GetLastTwentyFilms();
+//var_dump($LastMovies['results'][0]) ;
 
 
 ?>
@@ -45,19 +45,25 @@ $GetPopular = $FilmsController->GetPopular();
 
     <section id="SortiesPopulaires">
         <div id="SortiesPopulairesSlider">
-            <swiper-container class="mySwiper" pagination="true" loop="true" autoplay-delay="3000" keyboard="true">
-               
-                <?php     
+            <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true">
+
+                <?php
                 //  A chaque film récupéré :
-                foreach($GetPopular['results'] as $film){
+                foreach ($PopularMovies['results'] as $film) {
                     //affiche l'image Backdrop, la banniere du film ( plus large que haute )
-                    echo ' <swiper-slide><img src=" https://image.tmdb.org/t/p/original'. $film['backdrop_path'] .'">';
+                    echo ' <swiper-slide><img src=" https://image.tmdb.org/t/p/original' . $film['backdrop_path'] . '">';
                     ?>
                     <div class='FilmInfo'>
-                        <h2><?= $film['title'] ?></h2>
-                        <h3>Sortit le : <?= $film['release_date'] ?></h3>
-                        Note moyenne : <?= $film['vote_average'] ?> nombres de notes : <?= $film['vote_count'] ?>     
-                       
+                        <h2>
+                            <?= $film['title'] ?>
+                        </h2>
+                        <h3>Sortit le :
+                            <?= $film['release_date'] ?>
+                        </h3>
+                        Note moyenne :
+                        <?= $film['vote_average'] ?>/10 &emsp; nombres de notes :
+                        <?= $film['vote_count'] ?>
+
                     </div>
                     </swiper-slide>
                     <?php
@@ -65,6 +71,17 @@ $GetPopular = $FilmsController->GetPopular();
                 ?>
 
             </swiper-container>
+        </div>
+    </section>
+
+    <section id="Upcoming">
+        <div id="UpcomingContainer">
+        <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
+            <?php
+            foreach ($LastMovies['results'] as $film) {
+                echo '<swiper-slide><a href=""><img class="poster" src=" https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;</swiper-slide>';
+            }
+            ?>
         </div>
     </section>
 
