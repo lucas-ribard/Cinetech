@@ -58,7 +58,7 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
                 //  A chaque film récupéré :
                 foreach ($PopularMovies['results'] as $film) {
                     //affiche l'image Backdrop, la banniere du film ( plus large que haute )
-                    echo ' <swiper-slide><img src=" https://image.tmdb.org/t/p/original' . $film['backdrop_path'] . '">';
+                    echo ' <swiper-slide><a href="films/'.$film['id'].'"><img src=" https://image.tmdb.org/t/p/original' . $film['backdrop_path'] . '"></a>';
                     ?>
                     <div class='FilmInfo'>
                         <h2>
@@ -82,13 +82,13 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
     </section>
 
     <section class="Sections">
-    <h2><b>Nouveautés</b></h2>
+    <h2><b>Futures Sorties</b></h2>
         <div id="UpcomingContainer">
           
         <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
             <?php
             foreach ($LastMovies['results'] as $film) {
-                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;
+                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href="films/'.$film['id'].'"><img  src="https://image.tmdb.org/t/p/original' . $film['poster_path'] . '"></a>&nbsp;
                 Sortie le :<br><b>'.$film['release_date'].'</b></div></swiper-slide>';
             }
             ?>
@@ -102,7 +102,7 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
         <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
             <?php
             foreach ($PopularSeriesFR['results'] as $Series) {
-                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $Series['poster_path'] . '"></a>&nbsp;
+                echo '<swiper-slide class="swiperposter"><a href="series/'.$Series['id'].'"><div class="class="poster""><img  src="https://image.tmdb.org/t/p/original' . $Series['poster_path'] . '"></a>&nbsp;
                 Débuté le :<br><b>'.$Series['first_air_date'].'</b></div></swiper-slide>';
             }
             ?>
@@ -117,7 +117,7 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
         <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true" slides-per-view="5">
             <?php
             foreach ($PopularSeriesENG['results'] as $Series) {
-                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href=""><img  src="https://image.tmdb.org/t/p/original' . $Series['poster_path'] . '"></a>&nbsp;
+                echo '<swiper-slide class="swiperposter"><div class="class="poster""><a href="series/'.$Series['id'].'"><img  src="https://image.tmdb.org/t/p/original' . $Series['poster_path'] . '"></a>&nbsp;
                 Débuté le :<br><b>'.$Series['first_air_date'].'</b></div></swiper-slide>';
             }
             ?>
@@ -126,7 +126,7 @@ $LastSeriesENG = $SeriesController->GetLastTwentyENG();
 
 
 
- <!-- Header -->
+ <!-- footer -->
  <?php require_once("includes/footer.php"); ?>
 </body>
 

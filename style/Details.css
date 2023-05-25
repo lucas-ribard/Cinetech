@@ -1,0 +1,52 @@
+body{
+    background-color: var(--lightbg-color);
+}
+
+detail{
+    color : var(--detail-color);
+}
+
+section{
+    margin-top: 5%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2%;
+    color: white;
+}
+
+#poster img{
+    padding: 10%;
+    width: 100%;
+   
+}
+#Description{
+    display: flex;
+    justify-content: space-between;
+
+    margin: 2% 5%;
+
+    background-color: #383838d0;
+}
+
+#FilmInfo{
+    padding:5% 10%;
+    width: 300%;
+}
+
+#CompaniesLogo{
+    width: 15%;
+    
+}
+#studios{
+    border-radius: 30px;
+    padding: 5%;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0.356);
+}

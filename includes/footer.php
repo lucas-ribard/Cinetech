@@ -1,7 +1,7 @@
 <footer>
     <div>
-        <h3 href="">CineTech</h3>
-        <a href="">Acceuil</a>
+        <h3>CineTech</h3>
+        <a href="/Cinetech">Acceuil</a>
     </div>
 
     <div>
