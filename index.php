@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 $router = new AltoRouter();
 $router->setBasePath('/Cinetech');
 //load filmcontroller
-use App\Controller\FilmsController;
+
 
 //get necessary .env data
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -23,10 +23,13 @@ $router->map('GET', '/films', function () {
 });
 
 $router->map('GET', '/films/[i:id]', function ($id) {
+    require_once("src/View/FilmDetail.php");
+   
+});
 
-    $FilmsController = new FilmsController;
-    $FilmInfo = $FilmsController->SeeFilmInfo($id);
-    var_dump($FilmInfo);
+$router->map('GET', '/series/[i:id]', function ($id) {
+    require_once("src/View/SeriesDetail.php");
+   
 });
 
 

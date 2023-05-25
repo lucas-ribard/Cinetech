@@ -1,7 +1,7 @@
 <header>
 
     <div>
-        <h1><a href="">CineTech</a></h1>
+        <h1><a href="/Cinetech">CineTech</a></h1>
     </div>
 
     <div>
