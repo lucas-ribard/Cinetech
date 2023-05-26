@@ -19,7 +19,7 @@ $router->map('GET', '/', function () {
 });
 
 $router->map('GET', '/films', function () {
-    echo 'all films';
+    require_once("src/View/Films.php");
 });
 
 $router->map('GET', '/films/[i:id]', function ($id) {
@@ -30,6 +30,15 @@ $router->map('GET', '/films/[i:id]', function ($id) {
 $router->map('GET', '/series/[i:id]', function ($id) {
     require_once("src/View/SeriesDetail.php");
    
+});
+
+$router->map('GET', '/series', function () {
+    require_once("src/View/Series.php");
+   
+});
+
+$router->map('GET', '/.env', function () {
+    require_once('src/View/Acceuil.php');
 });
 
 

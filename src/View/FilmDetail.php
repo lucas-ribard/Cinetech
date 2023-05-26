@@ -3,6 +3,8 @@ use App\Controller\FilmsController;
 
 $FilmsController = new FilmsController;
 $FilmInfo = $FilmsController->SeeFilmInfo($id);
+$FilmRecommendations = $FilmsController->GetRecommendations($id);
+
 
 ?>
 <!DOCTYPE html>
@@ -39,10 +41,10 @@ $FilmInfo = $FilmsController->SeeFilmInfo($id);
     <!-- header -->
     <?php require_once("includes/header.php"); ?>
 
-    <section>
+    <section id="SectionforBG">
 
         <style type="text/css">
-            section {
+            #SectionforBG {
                 background-image: url("https://image.tmdb.org/t/p/original<?= $FilmInfo['backdrop_path'] ?>");
             }
         </style>
@@ -75,10 +77,10 @@ $FilmInfo = $FilmsController->SeeFilmInfo($id);
                 <div id='studios'>
                     <?php
                     foreach ($FilmInfo['production_companies'] as $Studio) {
-                        if(isset($Studio['logo_path'])){
+                        if (isset($Studio['logo_path'])) {
                             echo '<img id="CompaniesLogo" src="https://image.tmdb.org/t/p/original' . $Studio['logo_path'] . '">&emsp;&emsp;';
-                        }else{
-                            echo $Studio['name'].'&emsp;&emsp;';
+                        } else {
+                            echo $Studio['name'] . '&emsp;&emsp;';
                         }
                     }
 
@@ -88,9 +90,27 @@ $FilmInfo = $FilmsController->SeeFilmInfo($id);
             </div>
 
         </div>
-    
+
 
     </section>
+<!--
+    <section>
+        <swiper-container class="mySwiper" loop="true" autoplay-delay="3000" keyboard="true">
+            <?php foreach ($FilmRecommendations['results'] as $Recommandation) {
+
+                //affiche l'image Backdrop, la banniere du film ( plus large que haute )
+                echo ' <swiper-slide><a href="films/' . $film['id'] . '"><img src=" https://image.tmdb.org/t/p/original' . $Recommandation['poster_path'] . '"></a>';
+                ?>
+
+                </swiper-slide>
+                <?php
+            }
+            ?>
+
+        </swiper-container>
+
+    </section>
+        -->
     <!-- footer -->
     <?php require_once("includes/footer.php"); ?>
 </body>

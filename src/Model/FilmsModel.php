@@ -36,7 +36,7 @@ class FilmsModel
 
     public function GetRecommendations($id)
     {
-        $requete = 'https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $_ENV['TMDB_API_KEY'] . '/recommendations&include_adult=false';
+        $requete = 'https://api.themoviedb.org/3/movie/' . $id . '/recommendations?api_key=' . $_ENV['TMDB_API_KEY'];
         $response = file_get_contents($requete);
         $response = json_decode($response, true);
         return $response;
